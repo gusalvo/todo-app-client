@@ -12,7 +12,7 @@
 
         var obj = new XMLHttpRequest(),
         method = "POST",
-        url = "http://192.168.20.173:7000/todos";
+        url = "http://todoapp.mosfarm.eu/todos";
 
         obj.open(method, url, true);
         obj.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -49,7 +49,7 @@
     function getTodos(callbackFunction) {
         
         $.get({
-            url: 'http://192.168.20.173:7000/todos?uuid='+sessionUuid,
+            url: 'http://todoapp.mosfarm.eu/todos?uuid='+sessionUuid,
             success: function(data) {
                 // console.log(data)
 
