@@ -60,7 +60,7 @@
                     console.log(param1); 
 
                    var li = document.createElement('li');
-                          
+                   li.classList.add("custom-control-label");
                    
                    var div = document.createElement("div");
                    div.innerHTML = param1.data.content;

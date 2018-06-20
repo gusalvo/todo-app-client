@@ -22,46 +22,13 @@
         }
 
 
-        // check todo
-        function checkTodo(e) {
-            var label = e.target.parentNode;
-            var id = label.getAttribute('id');
-
-           // console.log(id);
-
-            var data = {
-                   
-                "data": {
-                    "done": e.target.checked
-                }
-            }
-           
-            window.app.Store.updateTodo(id, data, function(e) {
-            
-           });
-          
-       }
-
-
-       // update todo
-       function modTodo(e) {
-        var label = e.target.parentNode;
-        var id = label.getAttribute('id');
-
-       console.log(id);
-
-        var data = {
-               
-            "data": {
-                "content": "testo"
-            }
+        // update todo
+        /*
+        function updateTodo(e){
+            var id = response.data.docs[i]._id;
+            console.log(id);
         }
-       
-        window.app.Store.updateTodo(id, data, function(e) {
-        
-       });
-      
-   }
+        */
 
 
         
@@ -70,47 +37,33 @@
 
                 for (let i = 0; i < response.data.docs.length; i++) {
 
-
-                   // li
                    var li = document.createElement('li');
                    li.classList.add("TodoElement");
                    li.textContent = response.data.docs[i].content;
                    li.setAttribute('id', response.data.docs[i]._id);
-                    
+
+                  
+                   
                    // check box 
                    var checkbox = document.createElement("input");
                    checkbox.classList.add("CheckElement");
                    checkbox.setAttribute("type", "checkbox");
-                  
-                   //if
-                   if (response.data.docs[i].done == true) {
-                        checkbox.setAttribute("checked", true);
-
-                   }
-                   
-
+                   checkbox.setAttribute("indeterminate", false);
                    checkbox.setAttribute("id", response.data.docs[i]._id);
-
-                   // label
-                   var label = document.createElement('label');
-                   label.setAttribute("id", response.data.docs[i]._id);
                    // span element
                    var span = document.createElement('span');
                    span.classList.add("DeleteElement");
                    span.textContent = 'x';
                    // span.classList.add('delete');
                    // append
-                   
                    list.appendChild(li);
-                   li.appendChild(label);
-                   label.appendChild(checkbox);
+                   li.appendChild(checkbox);
                    li.appendChild(span);
-                   
                    // add listener
                    span.addEventListener('click', deleteTodo);
-                   label.addEventListener('click', checkTodo);
-                   li.addEventListener('click', modTodo);
+                  // li.addEventListener('click', updateTodo);
                    
+
                     
                 }
    
@@ -151,11 +104,7 @@
                checkbox.classList.add("CheckElement");
                checkbox.classList.add("custom-control-input");
                checkbox.setAttribute("type", "checkbox");
-                //if
-                if (param1.data.done == true) {
-                    checkbox.setAttribute("checked", true);
-
-               }
+               checkbox.setAttribute("indeterminate", false);
                checkbox.setAttribute("id", param1.data._id);
                // span element
                var span = document.createElement('span');

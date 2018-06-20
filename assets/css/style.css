@@ -7,6 +7,49 @@ html, body {
     padding: 0;
 }
 
+
+.TodoElement{
+    font-size: 22px;
+    color: black;
+}
+
+.CheckElement{
+    font-size: 22px;
+    background-color: red;
+}
+
+.DeleteElement{
+    font-size: 22px;
+    color: red;
+    padding: 5px;
+}
+
+
+.TextInput{
+    padding: 10px;
+    border-radius: 5px;
+    width: 500px;
+    font-size: 14px;
+    color: gray;
+}
+
+.Pulsante{
+    color: white;
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    
+}
+
 .TodoApp {
-    background-color: tomato; /* ;) tomato */
+    background-color: tomato;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.blocco {
+    background-color:#E5DCDC;
+    padding: 10px;
+    border-radius: 10px;
 }
